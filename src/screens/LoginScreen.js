@@ -16,6 +16,7 @@ class LoginScreen extends React.Component {
         <TouchableHighlight style={styles.button} onPress={() => {}} underlayColor="#823d81">
           <Text style={styles.buttonTitle}>ログインする</Text>
         </TouchableHighlight>
+
       </View>
     );
   }
