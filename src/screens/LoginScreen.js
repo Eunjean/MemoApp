@@ -3,16 +3,23 @@ import {
   StyleSheet, View, Text, TextInput,
   TouchableHighlight,
 } from 'react-native';
+import firebase from 'firebase';
 
 class LoginScreen extends React.Component {
   state = {
     email: '',
     password: '',
   }
-  // eslint-disable-next-line
+
   handleSubmit() {
-    // () => { this.props.navigation.navigate('Home'); }
-    // Log in!!
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then((result) => {
+        this.props.navigation.navigate('Home');
+        console.log(result.good);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {
