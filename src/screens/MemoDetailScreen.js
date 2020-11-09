@@ -25,7 +25,6 @@ class MemoDetailScreen extends React.Component {
 
   render() {
     const { memo } = this.state;
-    console.log('memo', memo);
     if (memo == null) { return null; }
     return (
       <View style={styles.container}>
